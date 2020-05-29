@@ -7,6 +7,6 @@ abstract class View
         if (isset($data)) {
             foreach ($data as $key => $value) $$key = $value;
         }
-        require_once "views/$view.php";
+        require_once $_SERVER['DOCUMENT_ROOT'] . "/views/$view.php";
     }
 }

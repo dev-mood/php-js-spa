@@ -13,7 +13,8 @@ class Router
     public static function to($uri)
     {
         if (array_key_exists($uri, self::$routes)) {
-            require_once './controllers/' . self::$routes[$uri] . '.php';
-        } else throw new Exception("No route defined for this URI.");
+            return './controllers/' . self::$routes[$uri] . '.php';
+        }
+        throw new Exception("No route defined for this URI.");
     }
 }
